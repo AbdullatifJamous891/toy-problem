@@ -24,8 +24,22 @@
 
 Array.prototype.isSubsetOf = function (arr) {
 	
-	for(var i=0; i< this.length; i++) {
-		if(!arr.includes(this[i])){
+	//first solution where time comlexity is n^2
+	// for(var i=0; i< this.length; i++) {
+	// 	if(!arr.includes(this[i])){
+	// 		return false
+	// 	}
+	// }
+	// return true
+
+	// second way by using object where time comlexity is linear
+	var obj = {}
+	for(var i = 0; i< arr.length; i++) {
+		obj[arr[i]] = 0
+	}
+
+	for(var j=0; j<this.length; j++) {
+		if(obj[this[j]]===undefined){
 			return false
 		}
 	}
