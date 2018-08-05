@@ -35,7 +35,10 @@ Array.prototype.isSubsetOf = function (arr) {
 	// second way by using object where time comlexity is linear
 	var obj = {}
 	for(var i = 0; i< arr.length; i++) {
-		obj[arr[i]] = 0
+		if(!obj[arr[i]]){
+			obj[arr[i]]=1
+		}
+		
 	}
 
 	for(var j=0; j<this.length; j++) {
