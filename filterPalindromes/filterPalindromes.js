@@ -10,6 +10,12 @@
 
 
 function filterPalindromes (words) {
-  // Write your code here, and
-  // return your final answer.
+  var arr = [];
+  for(var i=0; i<words.length; i++){
+  	if(words[i].toLowerCase().split(" ").join("") === 
+  	   words[i].toLowerCase().split(" ").join("").split("").reverse().join("")){
+  		arr.push(words[i])
+  	}
+  }
+  return arr
 }
