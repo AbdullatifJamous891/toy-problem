@@ -13,7 +13,24 @@
 //output:false
 
 function isBalanced (str) {
-  // Write your code here, and
-  // return your final answer.
+  var obj = {
+  	"(" : ")",
+  	"[" : "]",
+  	"{" : "}"
+  }
+  var stack = [];
+  for (var i=0; i<str.length; i++){
+  	if(str[i] === "(" || str[i]==="[" || str[i]==="{"){
+  		stack.push(str[i])
+  	}else if(str[i]===")" || str[i]==="]" || str[i]==="}"){
+  		if(str[i]!==obj[stack.pop()]){
+  			return false
+  		}
+  	}
+  }
+  if(stack.length > 0){
+  	return false
+  }
+  return true
 }
 
